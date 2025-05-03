@@ -1,3 +1,5 @@
 export default [
-  { path: '/', component: () => import('@/pages/Index.vue')}
+  { path: '/', redirect: '/login' },
+  { path: '/login', component: () => import('@/pages/Login.vue') },
+  { path: '/dashboard', component: () => import('@/pages/Dashboard.vue') },
 ]
