@@ -4,4 +4,5 @@ export default [
   { path: '/dashboard', component: () => import('@/pages/Dashboard.vue') },
   { path: '/under-construction', component: () => import('@/pages/UnderConstruction.vue') },
   { path: '/structure', component: () => import('@/pages/Structure.vue') },
+  { path: '/asup', component: () => import('@/pages/Asup.vue') },
 ]

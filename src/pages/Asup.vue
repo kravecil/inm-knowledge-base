@@ -1,9 +1,9 @@
 <script setup>
-import OrgChart from '@/components/OrgChart.vue'
+  // 
 </script>
 
 <template>
   <q-page padding>
-    <OrgChart />
+    <strong>ASUP page</strong> в разработке
   </q-page>
 </template>
