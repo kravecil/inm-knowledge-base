@@ -3,6 +3,7 @@ import { useCoreStore } from '@/stores/core';
 
 const core = useCoreStore()
 const menu = [
+  {label: 'Dashboard', path: '/dashboard', icon: 'dataset'},
   {
     label: "Организационная структура",
     path: "/structure",
