@@ -3,11 +3,50 @@ import data from '@/assets/organization_schema_d3.json';
 
 import { OrgChart } from 'd3-org-chart';
 import { select } from 'd3-selection'
-import { onMounted } from 'vue';
+import { onMounted, watchEffect } from 'vue';
 
 import { useRouter } from 'vue-router';
 
+const props = defineProps(["search"])
+
+let chart;
+
+const filterChart = (value) => {
+  if (!chart) return
+  // Get input value
+  // const value = e.srcElement.value;
+
+  // Clear previous higlighting
+  chart.clearHighlighting();
+
+  // Get chart nodes
+  const data = chart.data();
+
+  // Mark all previously expanded nodes for collapse
+  data.forEach((d) => (d._expanded = false));
+
+  // Loop over data and check if input value matches any name
+  data.forEach((d) => {
+    if (value != '' && d.name.toLowerCase().includes(value.toLowerCase())) {
+      // If matches, mark node as highlighted
+      d._highlighted = true;
+      d._expanded = true;
+    }
+  });
+
+  // Update data and rerender graph
+  chart.data(data).render().fit();
+
+  console.log('filtering chart', value);
+}
+
+watchEffect(() => {
+  filterChart(props.search)
+})
+
 const router = useRouter()
+
+
 
 const onClick = (event, d) => {
   console.log('Node clicked!')
@@ -16,8 +55,10 @@ const onClick = (event, d) => {
   if (route) router.push(route)
 }
 
+
+
 onMounted(() => {
-  new OrgChart()
+  chart = new OrgChart()
     .container(".chart-container")
     .data(data)
     .nodeWidth((d) => 250)
@@ -27,6 +68,7 @@ onMounted(() => {
     .compactMarginBetween((d) => 15)
     .compactMarginPair((d) => 80)
     .expandAll()
+    .clearHighlighting()
     .nodeContent(function (d, i, arr, state) {
       select(this).on('click', onClick)
 

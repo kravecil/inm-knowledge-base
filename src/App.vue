@@ -11,7 +11,7 @@ const route = useRoute()
   <q-layout view="hHh lpr lFf">
     <Header v-if="route.path !== '/' && route.path !== '/login'" />
     <Drawer v-if="route.path !== '/' && route.path !== '/login'" />
-    <q-page-container>
+    <q-page-container class="bg-blue-grey-1">
       <router-view />
     </q-page-container>
   </q-layout>
