@@ -8,7 +8,7 @@ const route = useRoute()
 </script>
 
 <template>
-  <q-layout view="hHh lpr lFf">
+  <q-layout view="hHh Lpr lFf">
     <Header v-if="route.path !== '/' && route.path !== '/login'" />
     <Drawer v-if="route.path !== '/' && route.path !== '/login'" />
     <q-page-container class="bg-blue-grey-1">
