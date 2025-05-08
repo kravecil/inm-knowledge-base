@@ -12,7 +12,9 @@ const route = useRoute()
     <Header v-if="route.path !== '/' && route.path !== '/login'" />
     <Drawer v-if="route.path !== '/' && route.path !== '/login'" />
     <q-page-container class="bg-blue-grey-1">
-      <router-view />
+      <RouterView v-slot="{ Component }">
+        <component :is="Component" class="animate__animated animate__fadeIn slower" />
+      </RouterView>
     </q-page-container>
   </q-layout>
 </template>
