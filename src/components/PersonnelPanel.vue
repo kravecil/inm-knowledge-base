@@ -1,24 +1,46 @@
 <script setup>
 import data from '@/assets/data_asup.json'
+import CardInfo from '@/components/CardInfo.vue'
 </script>
 
 <template>
   <q-list>
     <template v-for="(item, idx) in data" :key="idx">
-      <q-expansion-item :label="item.title" :caption="item.post" header-class="bg-grey-2 q-my-sm rounded-borders">
-        <q-card class="bg-grey-2 q-pa-md q-ma-md" bordered style="border-radius: 15px;">
-          <q-card-section>
+      <q-expansion-item :label="item.post" :caption="item.title" header-class="bg-grey-2 q-my-sm rounded-borders">
+        <q-card class="bg-grey-2 q-ma-md" bordered style="border-radius: 15px;">
+          <q-card-section class="bg-blue-grey-4">
             <q-item>
-              <q-item-section class="text-weight-bold">Запрлата</q-item-section>
-              <q-item-section side>{{ item.salary }} ₽</q-item-section>
+              <q-item-section avatar>
+                <q-avatar size="xl">
+                  <img src="https://i.pravatar.cc/300" />
+                </q-avatar>
+              </q-item-section>
+              <q-item-section>
+                <q-item-label class="text-h6 text-blue-grey-10">{{ item.title }}</q-item-label>
+              </q-item-section>
             </q-item>
           </q-card-section>
-          <q-separator />
-          <q-card-section class="text-caption text-justify">
-            {{ item.description }}
-          </q-card-section>
+
+          <q-item-section>
+            <div class="info">
+              <CardInfo title="Зарплата" :caption="`${item.salary} ₽`" />
+              <CardInfo title="Дата рождения" :caption="item.birthdate" />
+              <CardInfo title="Возраст" :caption="`${item.age} лет`" />
+              <CardInfo title="Обязанности" :caption="item.description" />
+            </div>
+          </q-item-section>
         </q-card>
       </q-expansion-item>
     </template>
   </q-list>
 </template>
+
+<style scoped>
+.info {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 20px 10px;
+}
+</style>
