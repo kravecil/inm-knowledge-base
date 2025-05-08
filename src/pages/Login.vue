@@ -13,7 +13,7 @@ const password = ref("")
 
 <template>
   <q-page class="page flex flex-center">
-    <q-card class="form q-pa-md">
+    <q-card class="form q-pa-md animate__animated animate__bounceIn animate__slower">
       <q-form :submit="onSubmit">
         <q-card-section class="text-center">
           <!-- <div class="text-h5 text-weight-bold">Идель Нефтемаш</div> -->
