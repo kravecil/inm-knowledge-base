@@ -8,15 +8,15 @@ import CardInfo from '@/components/CardInfo.vue'
     <template v-for="(item, idx) in data" :key="idx">
       <q-expansion-item :label="item.post" :caption="item.title" header-class="bg-grey-2 q-my-sm rounded-borders">
         <q-card class="bg-grey-2 q-ma-md" bordered style="border-radius: 15px;">
-          <q-card-section class="bg-blue-grey-4">
+          <q-card-section class="bg-blue-grey-3">
             <q-item>
               <q-item-section avatar>
                 <q-avatar size="xl">
-                  <img src="https://i.pravatar.cc/300" />
+                  <img src="/avatar.jpg" />
                 </q-avatar>
               </q-item-section>
               <q-item-section>
-                <q-item-label class="text-h6 text-blue-grey-10">{{ item.title }}</q-item-label>
+                <q-item-label class="text-h6 text-blue-grey-9">{{ item.title }}</q-item-label>
               </q-item-section>
             </q-item>
           </q-card-section>
