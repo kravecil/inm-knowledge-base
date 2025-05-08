@@ -29,6 +29,30 @@ import CardInfo from '@/components/CardInfo.vue'
               <CardInfo title="Обязанности" :caption="item.description" />
             </div>
           </q-item-section>
+
+          <q-separator />
+
+          <q-card-section>
+            <div class="rounded-borders bg-black text-grey-4 q-pa-sm">Прикреплённые файлы:</div>
+
+            <q-list dense class="q-py-md">
+
+              <q-item>
+                <q-item-section avatar><q-icon name="description" /></q-item-section>
+                <q-item-section><a href="/sample.doc" download>Должностная инструкция</a></q-item-section>
+              </q-item>
+              <!--  -->
+              <q-item>
+                <q-item-section avatar><q-icon name="description" /></q-item-section>
+                <q-item-section><a href="/sample.doc" download>Регламент ИБ</a></q-item-section>
+              </q-item>
+              <!--  -->
+              <q-item>
+                <q-item-section avatar><q-icon name="description" /></q-item-section>
+                <q-item-section><a href="/sample.doc" download>Справочник станков</a></q-item-section>
+              </q-item>
+            </q-list>
+          </q-card-section>
         </q-card>
       </q-expansion-item>
     </template>
