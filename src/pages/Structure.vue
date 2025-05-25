@@ -1,8 +1,16 @@
 <script setup>
 import OrgChart from '@/components/OrgChart.vue'
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
+import { useCoreStore } from '@/stores/core'
+
+const core = useCoreStore()
 
 const search = ref('')
+
+
+onMounted(async () => {
+  const orgStructure = await core.fetchOrganizationStructure()
+})
 </script>
 
 <template>
