@@ -36,8 +36,6 @@ const filterChart = (value) => {
 
   // Update data and rerender graph
   chart.data(data).render().fit();
-
-  console.log('filtering chart', value);
 }
 
 watchEffect(() => {
@@ -49,10 +47,7 @@ const router = useRouter()
 
 
 const onClick = (event, d) => {
-  console.log('Node clicked!')
-
-  const route = d.data.route
-  if (route) router.push(route)
+  router.push(`/divisions/${d.data.GUID}`)
 }
 
 

@@ -11,4 +11,5 @@ export default [
   { path: '/page-menu-8', component: () => import('@/pages/UnderConstruction.vue') },
   { path: '/structure', component: () => import('@/pages/Structure.vue') },
   { path: '/asup', component: () => import('@/pages/Asup.vue') },
+  { path: '/divisions/:UUID', component: () => import('@/pages/Division.vue') },
 ]
