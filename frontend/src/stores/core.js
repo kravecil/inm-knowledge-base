@@ -9,6 +9,7 @@ export const useCoreStore = defineStore('core', () => {
   const fetchOrganizationStructure = async () => {
     try {
       const divisions = await getDivisions()
+      return divisions
     } catch (error) {
       console.error('Не удалось сформировать данные по организационной структуре предприятия!', error)
     }

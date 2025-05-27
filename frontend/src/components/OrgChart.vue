@@ -1,13 +1,13 @@
 <script setup>
-import data from '@/assets/organization_schema_d3.json';
-
 import { OrgChart } from 'd3-org-chart';
-import { select } from 'd3-selection'
+import { select } from 'd3-selection';
 import { onMounted, watchEffect } from 'vue';
 
 import { useRouter } from 'vue-router';
 
-const props = defineProps(["search"])
+const props = defineProps(["search", "data"])
+
+const data = props.data
 
 let chart;
 
