@@ -1,7 +1,7 @@
+from fastapi import APIRouter
+
 from api.methods import api_get
 from api.schemas.divisions import DivisionSchema
-
-from fastapi import APIRouter
 
 api_divisions = APIRouter()
 
