@@ -1,7 +1,8 @@
-from fastapi import APIRouter, FastAPI
+from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from config import ALLOWED_ORIGINS, API_PREFIX
+from api.routers import api
+from config import ALLOWED_ORIGINS
 
 app = FastAPI()
 
@@ -13,5 +14,4 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-api = APIRouter(prefix=API_PREFIX)
 app.include_router(api)
