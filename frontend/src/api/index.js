@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const baseURL = 'http://INM/1CERPDEV/hs'
+const baseURL = 'http://localhost:8000/api'
 
 const username = 'КравецИВ'
 const password = 'КравецИВ_2105'

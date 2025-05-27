@@ -1,19 +1,8 @@
 import api from '@/api'
 
-const PREFIX = 'organizationchart'
-
 export const getDivisions = async () => {
   try {
-    const response = await api.get(`/${PREFIX}/divisions`)
-    return response.data
-  } catch (error) {
-    console.error(error)
-  }
-}
-
-export const getPersons = async () => {
-  try {
-    const response =  await api.get(`/${PREFIX}/persons`)
+    const response = await api.get(`/divisions`)
     return response.data
   } catch (error) {
     console.error(error)
@@ -22,7 +11,7 @@ export const getPersons = async () => {
 
 export const getPersonsByDivision = async (divisionUUID) => {
   try {
-    const response =  await api.get(`/${PREFIX}/divisionsinfo/${divisionUUID}`)
+    const response =  await api.get(`//persons/${divisionUUID}`)
     return response.data
   } catch (error) {
     console.error(error)
