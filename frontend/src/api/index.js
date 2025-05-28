@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const baseURL = 'http://83.174.202.218:8766/api'
+const baseURL = import.meta.env.VITE_API_URL || 'http://localhost:8000/api'
 
 const username = 'КравецИВ'
 const password = 'КравецИВ_2105'
