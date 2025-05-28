@@ -11,7 +11,7 @@ export const getDivisions = async () => {
 
 export const getPersonsByDivision = async (divisionUUID) => {
   try {
-    const response =  await api.get(`//persons/${divisionUUID}`)
+    const response =  await api.get(`/persons/${divisionUUID}`)
     return response.data
   } catch (error) {
     console.error(error)

@@ -1,6 +1,6 @@
+import { getDivisions, getPersonsByDivision } from '@/api/organizationchart';
 import { defineStore } from "pinia";
 import { ref } from "vue";
-import { getDivisions } from '@/api/organizationchart'
 
 export const useCoreStore = defineStore('core', () => {
   const drawer = ref(false)
@@ -15,9 +15,19 @@ export const useCoreStore = defineStore('core', () => {
     }
   }
 
+  const fetchPersonsByDivision = async (uuid) => {
+    try {
+      const persons = await getPersonsByDivision(uuid)
+      return persons
+    } catch (error) {
+      console.error('Не удалось получить список сотрудников подразделения!', error)
+    }
+  }
+
   return {
     drawer,
     organizationStructure,
     fetchOrganizationStructure,
+    fetchPersonsByDivision,
   }
 })

@@ -12,4 +12,5 @@ export default [
   { path: '/structure', component: () => import('@/pages/Structure.vue') },
   { path: '/asup', component: () => import('@/pages/Asup.vue') },
   { path: '/divisions/:UUID', component: () => import('@/pages/Division.vue') },
+  { path: '/divisions/:divisionUUID/employees/:employeeUUID', component: () => import('@/pages/Employee.vue') },
 ]

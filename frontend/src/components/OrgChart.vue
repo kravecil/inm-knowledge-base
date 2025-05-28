@@ -47,7 +47,8 @@ const router = useRouter()
 
 
 const onClick = (event, d) => {
-  router.push(`/divisions/${d.data.GUID}`)
+  if (!d.data.id) return
+  router.push(`/divisions/${d.data.id}`)
 }
 
 
