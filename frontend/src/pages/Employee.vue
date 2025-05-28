@@ -49,9 +49,26 @@ onMounted(async () => {
         <q-card-section class="q-pa-xl">
           <div class="text-h4 text-primary text-bold">{{ employee?.name }}</div>
           <div class="text-h5">{{ employee?.post }}</div>
-          <q-space class="q-py-md"/>
-          <div class="text-h6 text-grey-6">табельный номер {{ employee?.tabnum }}</div>
         </q-card-section>
+      </q-card-section>
+      <q-separator />
+      <q-card-section>
+        <q-item>
+          <q-item-section>Табельный номер</q-item-section>
+          <q-item-section side>{{ employee?.tabnum }}</q-item-section>
+        </q-item>
+        <q-item>
+          <q-item-section>Организация</q-item-section>
+          <q-item-section side>{{ employee?.organization }}</q-item-section>
+        </q-item>
+        <q-item v-if="employee?.hired_at">
+          <q-item-section>Дата приёма</q-item-section>
+          <q-item-section side>{{ employee?.hired_at }}</q-item-section>
+        </q-item>
+         <q-item v-if="employee?.rehired_at">
+          <q-item-section>Дата перемещения</q-item-section>
+          <q-item-section side>{{ employee?.rehired_at }}</q-item-section>
+        </q-item>
       </q-card-section>
     </q-card>
 
