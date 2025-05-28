@@ -8,7 +8,7 @@ const core = useCoreStore()
   <q-header elevated>
     <q-toolbar>
       <q-btn flat @click="core.drawer = !core.drawer" round dense icon="menu" />
-      <q-toolbar-title>ИНМ: База знаний</q-toolbar-title>
+      <q-toolbar-title>ИНМ: Информационный портал</q-toolbar-title>
     </q-toolbar>
   </q-header>
 </template>

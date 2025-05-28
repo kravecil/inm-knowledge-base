@@ -18,7 +18,7 @@ const password = ref("")
         <q-card-section class="text-center">
           <!-- <div class="text-h5 text-weight-bold">Идель Нефтемаш</div> -->
           <img src="/inm_title.png" width="200" />
-          <div class="text-h6 text-primary text-weight-bold">База знаний</div>
+          <div class="text-h6 text-primary text-weight-bold">Информационный портал</div>
         </q-card-section>
         <q-card-section>
           <q-input v-model="username" label="Имя пользователя" :rules="defaultRule" />
