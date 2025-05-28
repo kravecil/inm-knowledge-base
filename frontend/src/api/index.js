@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const baseURL = 'http://83.174.202.218:8000/api'
+const baseURL = 'http://83.174.202.218:8766/api'
 
 const username = 'КравецИВ'
 const password = 'КравецИВ_2105'
