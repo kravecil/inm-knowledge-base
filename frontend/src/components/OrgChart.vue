@@ -70,7 +70,7 @@ onMounted(() => {
 
       return `
         <div style="height:${d.height}px;border-radius:2px;overflow:visible"})">
-          <div style="height:${d.height}px;padding-top:0px;background-color:white;border:1px solid lightgray;">
+          <div style="height:${d.height}px;padding-top:0px;background-color:WhiteSmoke;border:1px solid gray;">
             <div style="height:${d.height}px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
               <div style="color:#111672;font-size:16px;font-weight:bold; text-align: center; padding: 10px;">${d.data.name}</div>
             </div> 
