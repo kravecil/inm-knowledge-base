@@ -41,10 +41,8 @@ onMounted(async () => {
 
     <q-card v-if="employee">
       <q-card-section horizontal>
-        <q-card-section>
-          <q-avatar size="200px">
-            <img src="/avatar.jpeg" />
-          </q-avatar>
+        <q-card-section class="flex flex-center">
+          <q-avatar size="150px" icon="person" style="border: 1px solid lightgray" />
         </q-card-section>
         <q-card-section class="q-pa-xl">
           <div class="text-h4 text-primary text-bold">{{ employee?.name }}</div>
